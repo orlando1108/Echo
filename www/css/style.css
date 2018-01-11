@@ -1,0 +1,14 @@
+#map{
+  height:80vh;
+}
+img {
+
+width: 50vw;
+height: 20vh;
+}
+.button2 {
+  float:right;
+}
+.button1 {
+  float:left;
+}
