@@ -1,14 +1,237 @@
-#map{
-  height:80vh;
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  width: 100vw;
+  height: 80vh;
+  margin: 0;
 }
-img {
 
-width: 50vw;
-height: 20vh;
+#map-text {
+  width: 100vw;
+  height: 43vh;
+  margin: 0;
 }
-.button2 {
-  float:right;
+
+/* Optional: Makes the sample page fill the window. */
+html, body, a {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
-.button1 {
-  float:left;
+
+/* -----------------------------------------*/
+/* --------------CSS - Boutons -------------*/
+/* -----------------------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+.buttons_index {
+  background: #ffffff;
+  bottom: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 20vh;
+  width: 100vw;
+	font-family: "Roboto", sans-serif;
+}
+
+.buttons_index a {
+  text-decoration: none;
+}
+
+span {
+  font-size: 125%;
+  font-weight: normal;
+}
+
+.btn-back {
+  position: relative;
+  width: 10vw;
+  height: 7vh;
+  line-height: 7vh;
+  background-color: #EFEFEF;
+  text-align: center;
+  vertical-align: center;
+  color: #191995;
+  font-family: "Roboto", sans-serif;
+	font-size: 1.2em;
+}
+
+a img {
+  height: 96px;
+  width: 96px;
+}
+
+
+.btn-text{
+	margin: 1px;
+	position: relative;
+	width: 48vw;
+	height: 18vh;
+	line-height: 18vh;
+	border: 2px solid #191995;
+	background-color: #EFEFEF;
+	text-align: center;
+  vertical-align: center;
+	color: #191995;
+  font-family: "Roboto", sans-serif;
+	font-size: 1.2em;
+	cursor:pointer;
+}
+
+.checked{
+	background-color: #1ECD97!important;
+	position: relative;
+}
+
+.checked span{
+	opacity: 0;
+	visibility: hidden;
+}
+
+.btn-voice{
+  margin: 1px;
+	position: relative;
+	width: 48vw;
+	height: 18vh;
+	line-height: 18vh;
+	border: 2px solid #191995;
+	background-color: #EFEFEF;
+	text-align: center;
+  vertical-align: center;
+	color: #191995;
+  font-family: "Roboto", sans-serif;
+	font-size: 1.2em;
+	cursor:pointer;
+}
+
+.checked{
+	background-color: #1ECD97!important;
+	position: relative;
+}
+
+.checked span{
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* -----------------------------------------*/
+/* -------------- CSS - Textarea -----------*/
+/* -----------------------------------------*/
+#form-div {
+	background-color:rgba(72,72,72,0.4);
+	padding: 10px 10px;
+	width: 100vw;
+  height: 60vh;
+	position: absolute;
+  bottom: 0;
+}
+
+.feedback-input {
+	color:#3c3c3c;
+	font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+	font-size: 18px;
+	border-radius: 0;
+	line-height: 22px;
+	background-color: #fbfbfb;
+	padding: 13px 13px 13px 54px;
+	margin-bottom: 0;
+	width:100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+  border: 3px solid rgba(0,0,0,0);
+}
+
+.feedback-input:focus{
+	background: #fff;
+	box-shadow: 0;
+	border: 2px solid #191995;
+	color: #191995;
+	outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+/* Icons ---------------------------------- */
+
+#comment{
+	background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+textarea {
+  width: 100%;
+  height: 50vh;
+  line-height: 150%;
+  resize:vertical;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+	background-color:white;
+}
+
+#button-submit-text {
+	font-family: Arial, Helvetica, sans-serif;
+	float:left;
+	width: 100%;
+  height: 10vh;
+	border: #191995 solid 1px;
+	cursor: pointer;
+	background-color: #EFEFEF; /* Couleur de l'arrière plan du bouton "Envoyer" */
+	color: #191995; /* Couleur de la police du bouton "Envoyer" */
+	font-size: 24px; /* Taille de la police du nouton "Envoyer" */
+	padding: 22px 0px;
+  font-weight: 700;
+}
+
+.submit {
+  bottom: 0;
+}
+
+@media only screen and (max-width: 580px) {
+
+	#form-div {
+		width: 100%;
+    bottom: 0;
+	}
+
+  #form1 {
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .buttons_index {
+    height: 20vh;
+    width: 100vw;
+  }
+
+  a img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+@media (max-width: 61.9em) {
+
+  p,
+  .block p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .block {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }

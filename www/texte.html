@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Echo | Homepage</title>
+    <title>Echo | Texte</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
@@ -24,8 +24,15 @@
 
 
   <body>
-    <!-- DEBUT MAP -->
-    <div id="map"></div>
+
+    <!-- DEBUT BOUTON RETOUR EN ARRIERE-->
+    <a href="javascript:history.back()">
+      <img src="data:image/png;base64,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">
+    </a>
+    <!-- / FIN BOUTON RETOUR EN ARRIERE-->
+
+    <!-- / DEBUT MAP -->
+    <div id="map-text"></div>
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
@@ -78,21 +85,22 @@
       navigator.geolocation.getCurrentPosition(maPosition);
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGi70Y2v5-W36JKM6rfya32lTYEeC51TU&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkNoFGaJqD0pgHG6l6Eq-YsC0bhW3uVbU&callback=initMap">
     </script>
     <!-- / FIN MAP -->
 
-    <!-- DEBUT Boutons Texte + Voix -->
-    <div class="buttons_index">
-        <a href="texte.html" class="btn-text">
-          <span>TEXTE</span>
-        </a>
-
-        <a href="#" class="btn-voice">
-          <span>AUDIO</span>
-        </a>
+    <!-- / DEBUT Texte -->
+    <div id="form-div">
+      <form class="form" id="form1">
+        <p class="text">
+          <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Entrez votre texte..."></textarea>
+        </p>
+        <div class="submit">
+          <input type="submit" value="Envoyer" id="button-submit-text"/>
+        </div>
+      </form>
     </div>
-    <!-- / FIN Boutons Texte + Voix -->
+    <!-- / FIN Texte -->
 
 
     <!-- Required JavaScript Libraries -->
