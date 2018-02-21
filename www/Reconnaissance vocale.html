@@ -1,0 +1,47 @@
+private void promptSpeechInput() {
+Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().getDisplayLanguage());
+intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Vous pouvez parler ...");
+try {
+startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+} catch (ActivityNotFoundException a) {
+Toast.makeText(getApplicationContext(), "Désolé, votre appareil ne supporte pas d'entrée vocale...", Toast.LENGTH_SHORT).show();
+}
+}
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+super.onActivityResult(requestCode, resultCode, data);
+switch (requestCode) {
+case REQ_CODE_SPEECH_INPUT: {
+if (resultCode == RESULT_OK && null != data) {
+ArrayList<String> buffer = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+String result = buffer.get(0);
+Pattern ff = Pattern.compile("Final|fantasy");
+if (ff.matcher(result).find()) {
+try {
+AssetFileDescriptor afd = getAssets().openFd("ffx-victory.mp3");
+MediaPlayer player = new MediaPlayer();
+player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+player.prepare();
+player.start();
+} catch (IOException e) {
+e.printStackTrace();
+}
+}
+}
+break;
+}
+default:
+break;
+}
+}
+@Override
+protected void onStop() {
+if(player != null) {
+if(player.isPlaying()) {
+player.stop();
+}
+}
+super.onStop();
+}

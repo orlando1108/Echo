@@ -1,0 +1,32 @@
+body {
+  background-color: orange;
+}
+
+.mon_titre {
+
+  font-size: 100px;
+  color: grey;
+}
+
+.profil_utilisateur {
+  color: black;
+  font-size: 50px;
+}
+
+.mode_nuit {
+  color: black;
+  font-size: 50px;
+}
+
+.notifications {
+  color: black;
+  font-size: 50px;
+}
+
+.déconnexion {
+  color: red;
+  font-size: 50px;
+  position: absolute;
+  bottom: 0;
+
+}
