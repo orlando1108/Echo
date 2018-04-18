@@ -16,100 +16,232 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
 
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
-}
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
-}
+ /* -----------------------------------------*/
+ /* --------------CSS - INDEX ---------------*/
+ /* -----------------------------------------*/
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
+ /* Always set the map height explicitly to define the size of the div
+  * element that contains the map. */
+ #map {
+   width: 100vw;
+   height: 80vh;
+   margin: 0;
+ }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
+ #map-text {
+   width: 100vw;
+   height: 43vh;
+   margin: 0;
+ }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
+ /* Optional: Makes the sample page fill the window. */
+ html, body, a {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   text-decoration: none;
+   overflow-x: hidden;
+ }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
+ .buttons_index {
+   background: #ffffff;
+   bottom: 0px;
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: center;
+ 	position: relative;
+ 	height: 20vh;
+   width: 100vw;
+ 	font-family: "Roboto", sans-serif;
+ }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
+ .buttons_index a {
+   text-decoration: none;
+ }
 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
+ span {
+   font-size: 125%;
+   font-weight: normal;
+ }
 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
+ a img {
+   height: 96px;
+   width: 96px;
+ }
+
+ .btn-text{
+ 	margin: 1px;
+ 	position: relative;
+ 	width: 50vw;
+ 	height: 19vh;
+ 	line-height: 19vh;
+ 	border: 2px solid #191995;
+   border-radius: 5px;
+ 	background-color: #EFEFEF;
+ 	text-align: center;
+   vertical-align: center;
+ 	color: #191995;
+   font-family: "Roboto", sans-serif;
+ 	font-size: 1.2em;
+ 	cursor:pointer;
+ }
+
+ .checked{
+ 	background-color: #1ECD97!important;
+ 	position: relative;
+ }
+
+ .checked span{
+ 	opacity: 0;
+ 	visibility: hidden;
+ }
+
+ .btn-voice{
+   margin: 1px;
+ 	position: relative;
+ 	width: 50vw;
+ 	height: 19vh;
+ 	line-height: 19vh;
+ 	border: 2px solid #191995;
+   border-radius: 5px;
+ 	background-color: #EFEFEF;
+ 	text-align: center;
+   vertical-align: center;
+ 	color: #191995;
+   font-family: "Roboto", sans-serif;
+ 	font-size: 1.2em;
+ 	cursor:pointer;
+ }
+
+ .checked{
+ 	background-color: #1ECD97!important;
+ 	position: relative;
+ }
+
+ .checked span{
+ 	opacity: 0;
+ 	visibility: hidden;
+ }
+
+ .img img {
+   width: auto;
+   height: auto;
+   vertical-align: middle;
+ }
+
+ .gear img {
+   z-index: 10;
+   width: 75px;
+   height: 75px;
+   position: absolute;
+   right: 10px;
+   top: 10px
+ }
+
+ a
+ {
+   text-decoration: none;
+   color: #232323;
+   transition: color 0.3s ease;
+ }
+
+ a:hover {
+   color: #a2c037;
+ }
+
+ #menuToggle {
+   display: block;
+   position: absolute;
+   top: 50px;
+   right: 30px;
+
+   z-index: 1;
+
+   -webkit-user-select: none;
+   user-select: none;
+ }
+
+ #menuToggle input {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   cursor: pointer;
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   -webkit-touch-callout: none;
+ }
+
+ #menuToggle span {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   background: rgb(0, 0, 0);
+   border-radius: 3px;
+   z-index: 1;
+   transform-origin: 4px 0px;
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+
+ #menuToggle span:first-child {
+   transform-origin: 0% 0%;
+ }
+
+ #menuToggle span:nth-last-child(2) {
+   transform-origin: 0% 100%;
+ }
+
+ #menuToggle input:checked ~ span {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+ }
+
+ #menuToggle input:checked ~ span:nth-last-child(3){
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+
+ #menuToggle input:checked ~ span:nth-last-child(2){
+   opacity: 1;
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+
+ #menu {
+   position: absolute;
+   width: 100vw;
+   height: 63vh;
+   margin: -100px 0 0 0;
+   padding: 50px;
+   padding-top: 125px;
+   right: -100px;
+   background: #ededed;
+   border-bottom: #232323 solid 2px;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   transform-origin: 0% 0%;
+   transform: translate(100%, 0);
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+
+ #menu li{
+   padding: 30px 0;
+   font-size: 30px;
+   font-family: Arial, Helvetica, sans-serif;
+   border-bottom: solid 1px black;
+ }
+
+ #menuToggle input:checked ~ ul{
+   transform: scale(1.0, 1.0);
+   opacity: 1;
+ }
